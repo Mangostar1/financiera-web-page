@@ -126,3 +126,15 @@ footer {
   font-size: 0.9rem;
   color: #6b7280;
 }
+
+.link-footer{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+
+  transition: color 0.3s ease;
+}
+
+.link-footer:hover {
+  color: var(--secondary-color);
+}
