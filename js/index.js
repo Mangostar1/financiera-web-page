@@ -8,12 +8,27 @@ function handleSubmit(event) {
       { email }
     )
     .then((response) => {
-      /* console.log("Subscripcion mensaje:", response.data.message); */
-      Swal.fire({
-        title: `¡Registro exitoso!`,
-        text: `Gracias por registrarte, ${email}. Te notificaremos pronto con más información.`,
-        icon: "success",
-      });
+      if (response.status !== 200) {
+        throw new Error("Failed to subscribe");
+      }
+
+      if (response.data.error) {
+        Swal.fire({
+          title: "Error",
+          text: response.data.error,
+          icon: "error",
+        });
+        throw new Error(response.data.error);
+        
+      }
+
+      if (response.status === 200) {
+        Swal.fire({
+          title: `¡Registro exitoso!`,
+          text: `Gracias por registrarte, ${email}. Te notificaremos pronto con más información.`,
+          icon: "success",
+        });
+      }
     })
     .catch((error) => {
       console.error("Error during subscription:", error);
