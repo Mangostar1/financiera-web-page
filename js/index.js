@@ -12,7 +12,7 @@ function handleSubmit(event) {
         throw new Error("Failed to subscribe");
       }
 
-      if (response.data.error) {
+      if (response.status === 400) {
         Swal.fire({
           title: "Error",
           text: response.data.error,
@@ -22,7 +22,16 @@ function handleSubmit(event) {
         
       }
 
-      if (response.status === 200) {
+      if (response.status === 500) {
+        Swal.fire({
+          title: "Error del servidor",
+          text: "Por favor, inténtalo de nuevo más tarde.",
+          icon: "error",
+        });
+        throw new Error("Server error");
+      }
+
+      if (response.status === 201) {
         Swal.fire({
           title: `¡Registro exitoso!`,
           text: `Gracias por registrarte, ${email}. Te notificaremos pronto con más información.`,
