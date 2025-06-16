@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style/index.css">
 </head>
+
 <body>
   <header>
     <h1>Transforma tu futuro financiero con inteligencia</h1>
-    <p>Una app diseñada para jóvenes profesionales que quieren tomar el control de sus ingresos, gastos y deudas. ¡Evita el sobreendeudamiento con decisiones inteligentes!</p>
+    <p>Una app diseñada para jóvenes profesionales que quieren tomar el control de sus ingresos, gastos y deudas. ¡Evita
+      el sobreendeudamiento con decisiones inteligentes!</p>
   </header>
   <main>
-    <section>
+    <section class="presentation-section">
+      <div id="presentation-text">
+        <div id="tittle-presentation-content">
+          <h2 class="tittle-presentation">APP Financiera</h2>
+          <p class="text-presentation">Centro de estilo de vida todo en uno</p>
+        </div>
+        <div id="presentation-download">
+          <!-- En este div ira un boton que invitara al usuario a descargar la app cuando este disponible, si el usuario presiona el boton, se le dirige al formulario de la web -->
+          <a id="btn-to-form" href="#cta-section">Descargala en la App Store</a>
+        </div>
+      </div>
+      <div id="presentation-image">
+        <img id="img-1" src="../assets/img/img-1.jpg" alt="Ilustración de la app financiera">
+      </div>
+    </section>
+    <section class="features-section">
       <h2>¡Descubre el poder de tus finanzas!</h2>
       <div class="features">
         <div class="feature">
@@ -34,20 +52,27 @@
         </div>
       </div>
     </section>
-    <section>
-      <h2>¡Prueba la app antes que nadie!</h2>
-      <form onsubmit="handleSubmit(event)">
-        <label for="email">¡Ingresa tu correo y reserva tu acceso anticipado!</label>
-        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
-        <button type="submit">Unirme a la lista de espera</button>
-      </form>
+    <section class="cta-section" id="cta-section">
+      <h2 id="cta-tittle">¡Prueba la app antes que nadie!</h2>
+      <div class="cta-image-content">
+        <img class="cta-image" src="./assets/img/img-5.jpg" alt="">
+      </div>
+      <div class="cta-content">
+        <form onsubmit="handleSubmit(event)">
+          <label for="email">¡Ingresa tu correo y reserva tu acceso anticipado!</label>
+          <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+          <button type="submit">Unirme a la lista de espera</button>
+        </form>
+      </div>
     </section>
   </main>
   <footer>
-    &copy; 2025 Tu App Financiera. Todos los derechos reservados. | <a class="link-footer" href="https://omar-zavala.cl/" target="_blank">Omar Zavala</a>
+    &copy; 2025 Tu App Financiera. Todos los derechos reservados. | <a class="link-footer"
+      href="https://omar-zavala.cl/" target="_blank">Omar Zavala</a>
   </footer>
   <script src="./js/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>
