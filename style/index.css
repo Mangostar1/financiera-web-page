@@ -1,18 +1,33 @@
 :root {
-  --primary-color: #4f46e5;
-  --secondary-color: #6366f1;
-  --bg-color: #f9fafb;
-  --bg-color-2: #111b1e;
-  --text-color: #1f2937;
-  --text-color-2: #f9fafb;
-  --accent-color: #10b981;
+  /* Colores Principales de Marca - Confianza y Profesionalismo */
+  --brand-primary: #4f46e5; /* Azul/Violeta oscuro, fuerte, para elementos clave */
+  --brand-secondary: #6366f1; /* Violeta ligeramente más claro o un azul complementario si prefieres más contraste */
+  --brand-tertiary: #818cf8; /* Una variante más clara para gradientes o estados */
 
-  --neutral-white: #ffffff;
-  --neutral-black: #000000;
-  --neutral-gray: #6b7280;
-  --neutral-gray-light: #f3f4f6;
-  --neutral-gray-dark: #374151;
+  /* Colores de Fondo - Base Clara y Opción Oscura */
+  --background-light: #f9fafb; /* Fondo principal claro */
+  --background-dark: #111b1e; /* Fondo para modo oscuro */
+  --background-light-alt: #f3f4f6; /* Fondo gris claro alternativo (tu neutral-gray-light) */
+
+  /* Colores de Texto - Legibilidad en ambos modos */
+  --text-primary: #1f2937; /* Texto principal oscuro para fondo claro */
+  --text-secondary: #6b7280; /* Texto secundario/descripciones (tu neutral-gray) */
+  --text-on-dark: #f9fafb; /* Texto para fondo oscuro */
+
+  /* Colores de Estado / Acento - Acciones y Notificaciones */
+  --success-color: #10b981; /* Verde, para éxito, crecimiento, positivo */
+  --warning-color: #f59e0b; /* Naranja, para advertencias, precaución */
+  --danger-color: #ef4444; /* Rojo, para errores, negativo, alertas críticas */
+  --info-color: #3b82f6; /* Azul más puro, para información general o enlaces */
+
+  /* Colores Neutros - Para estructura y detalles */
+  --neutral-white: #ffffff; /* Blanco puro */
+  --neutral-black: #000000; /* Negro puro */
+  --neutral-gray-light: #e5e7eb; /* Un gris aún más claro para bordes sutiles o separadores */
+  --neutral-gray: #9ca3af; /* Un gris medio para líneas o texto deshabilitado */
+  --neutral-gray-dark: #4b5563; /* Gris oscuro para texto menos prominente o iconos */
 }
+
 
 * {
   margin: 0;
@@ -26,8 +41,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-color-2);
-  color: var(--text-color-2);
+  background-color: var(--background-dark);
+  color: var(--text-on-dark);
   line-height: 1.6;
 }
 
@@ -73,7 +88,7 @@ body {
 }
 
 .navbar a:hover {
-  color: var(--primary-color);
+  color: var(--brand-primary);
 }
 
 /* header {
@@ -116,9 +131,9 @@ section {
   justify-items: center;
   height: 100%;
   width: 100%;
-  padding: 2rem 2rem 2rem 2rem;
-  background-color: var(--bg-color-2);
-  color: var(--text-color-2);
+  padding: 6rem 2rem 2rem 2rem;
+  background-color: var(--background-dark);
+  color: var(--text-on-dark);
 }
 
 #presentation-text{
@@ -129,8 +144,15 @@ section {
   align-items: center;
   padding: 2rem;
   text-align: left;
-  color: var(--text-color-2);
+  color: var(--text-on-dark);
   gap: 1rem;
+}
+
+.tittle-presentation {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-on-dark);
+  margin-bottom: 1rem;
 }
 
 #tittle-presentation-content{
@@ -138,8 +160,8 @@ section {
 }
 
 .text-presentation{
-  font-size: 4rem;
-  width: 35rem;
+  font-size: 3rem;
+  /* width: 35rem; */
 }
 
 #presentation-download{
@@ -151,9 +173,10 @@ section {
   padding: 1rem;
   text-decoration: none;
   border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-#btn-to-form::hover{
-  background: var(--primary-color);
+#btn-to-form:hover{
+  background: var(--brand-primary);
   color: #ffffff;
 }
 
@@ -175,11 +198,16 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   padding: 2rem 2rem 2rem 2rem;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--background-light);
+  color: var(--text-primary);
+}
+
+#feature-img{
+  width: 400px;
+  height: auto;
 }
 
 
@@ -202,7 +230,7 @@ section {
 }
 
 .feature h3 {
-  color: var(--primary-color);
+  color: var(--brand-primary);
   margin-bottom: 0.75rem;
 }
 
@@ -213,8 +241,8 @@ section {
   height: 100%;
   width: 100%;
   padding: 2rem 2rem 2rem 2rem;
-  background-color: var(--bg-color-2);
-  color: var(--text-color-2);
+  background-color: var(--background-dark);
+  color: var(--text-on-dark);
 }
 
 #cta-tittle {
@@ -245,6 +273,7 @@ section {
 
 form {
   background-color: #fff;
+  color: var(--text-primary);
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -255,7 +284,7 @@ form {
 }
 
 form label {
-  color: var(--text-color);
+  color: var(--text-primary);
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -272,7 +301,7 @@ button {
 }
 
 button {
-  background-color: var(--primary-color);
+  background-color: var(--brand-primary);
   color: white;
   border: none;
   cursor: pointer;
@@ -281,25 +310,25 @@ button {
 }
 
 button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--brand-secondary);
 }
 
 footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
-  color: var(--text-color-2);
-  background-color: var(--bg-color-2);
+  color: var(--text-on-dark);
+  background-color: var(--background-dark);
 }
 
 .link-footer{
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--brand-primary);
   font-weight: 600;
 
   transition: color 0.3s ease;
 }
 
 .link-footer:hover {
-  color: var(--secondary-color);
+  color: var(--brand-secondary);
 }
